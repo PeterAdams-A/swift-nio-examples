@@ -36,6 +36,7 @@ func sendEmail(_ email: Email,
                                            email: email,
                                            emailSentPromise: emailSentPromise,
                                            communicationHandler: communicationHandler)
+            .channelOptions([.allowImmediateEndpointAddressReuse])
     } catch {
         queue.async {
             handler(error)
